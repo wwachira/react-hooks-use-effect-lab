@@ -1,5 +1,5 @@
 # React useEffect Lab
-
+The app runs a test on ones knowledge based on react, js, jsx etc..
 ## Learning Goals
 
 - Use the `useEffect` hook with the dependencies array
