@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 
 function Question({ question, onAnswered }) {
   const [timeRemaining, setTimeRemaining] = useState(10);
 
   // add useEffect code
+  // useEffect to set timeout
+  useEffect(() => {
+    console.log("effect rady")
+    setTimeout(() => setTimeRemaining(timeRemaining - 1),1000)
+  })
+
+  // useEffect to cleanup
+  useEffect(() => {
+    console.log("effect noice")       
+    
+  })
+  
 
   function handleAnswer(isCorrect) {
     setTimeRemaining(10);
