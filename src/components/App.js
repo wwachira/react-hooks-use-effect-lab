@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import Question from "./Question";
+//import quiz data
 import quiz from "../data/quiz";
 
+//init current question state, [currentQuestionId, setCurrentQuestion]
+//init score state,  const [score, setScore] = useState(0);
 function App() {
-  const [questions, setQuestions] = useState(quiz);
   const [currentQuestionId, setCurrentQuestion] = useState(1);
   const [score, setScore] = useState(0);
-  const currentQuestion = questions.find((q) => q.id === currentQuestionId);
-
+  const currentQuestion = quiz.find((q) => q.id === currentQuestionId);
+//event handler `..` currrent question based on id, also udates the question, score
   function handleQuestionAnswered(correct) {
-    if (currentQuestionId < questions.length) {
+    if (currentQuestionId < quiz.length) {
       setCurrentQuestion((currentQuestionId) => currentQuestionId + 1);
     } else {
       setCurrentQuestion(null);
